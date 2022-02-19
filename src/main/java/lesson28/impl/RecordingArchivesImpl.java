@@ -20,6 +20,8 @@ public class RecordingArchivesImpl implements RecordingArchives {
     public void archiver(String filePath) {
         ZipOutputStream zout = new ZipOutputStream(new FileOutputStream("F:\\output.zip"));
         FileInputStream fis = new FileInputStream(filePath);
+        ZipEntry entry = new ZipEntry(filePath);
+        zout.putNextEntry(entry);
         byte[] buffer = new byte[fis.available()];
         zout.write(buffer);
         zout.closeEntry();

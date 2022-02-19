@@ -1,0 +1,10 @@
+spring:
+  main:
+    allow-circular-references: true
+
+profiles:
+  active: local
+
+application:
+  name: lesson 29
+  locale: en
