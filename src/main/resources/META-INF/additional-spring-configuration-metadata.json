@@ -14,25 +14,5 @@
       "name": "spring.jpa.hibernate.naming-strategy",
       "type": "java.lang.String",
       "description": "Description for spring.jpa.hibernate.naming-strategy."
-    },
-    {
-      "name": "profiles.active",
-      "type": "java.lang.String",
-      "description": "Description for profiles.active."
-    },
-    {
-      "name": "application",
-      "type": "java.lang.String",
-      "description": "Description for application."
-    },
-    {
-      "name": "application.name",
-      "type": "java.lang.String",
-      "description": "Description for application.name."
-    },
-    {
-      "name": "application.locale",
-      "type": "java.lang.String",
-      "description": "Description for application.locale."
     }
   ] }
