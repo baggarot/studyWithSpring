@@ -1,0 +1,15 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="Populate-table-directory_of_cities" author="Aleksandr Priemkin">
+        <insert tableName="DIRECTORY_OF_CITIES">
+            <column name="CITY_CODE" value="383"/>
+            <column name="CITY_NAME" value="Новосибирск"/>
+            <column name="CITY_NAME_IN_ENGLISH" value="Novosibirsk"/>
+            <column name="NUMBER_OF_RESIDENTS" value="1620162"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

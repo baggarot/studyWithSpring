@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/migration/schema.xml
+  - include:
+      file: classpath:db/migration/data.xml

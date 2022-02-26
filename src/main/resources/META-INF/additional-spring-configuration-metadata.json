@@ -34,5 +34,65 @@
       "name": "application.locale",
       "type": "java.lang.String",
       "description": "Description for application.locale."
+    },
+    {
+      "name": "application.datasource.url",
+      "type": "java.lang.String",
+      "description": "Description for application.datasource.url."
+    },
+    {
+      "name": "application.datasource.username",
+      "type": "java.lang.String",
+      "description": "Description for application.datasource.username."
+    },
+    {
+      "name": "application.datasource.password",
+      "type": "java.lang.String",
+      "description": "Description for application.datasource.password."
+    },
+    {
+      "name": "application.datasource.driverClassName",
+      "type": "java.lang.String",
+      "description": "Description for application.datasource.driverClassName."
+    },
+    {
+      "name": "application.jpa.generate-ddl",
+      "type": "java.lang.String",
+      "description": "Description for application.jpa.generate-ddl."
+    },
+    {
+      "name": "application.jpa.hibernate.ddl-auto",
+      "type": "java.lang.String",
+      "description": "Description for application.jpa.hibernate.ddl-auto."
+    },
+    {
+      "name": "application.jpa.hibernate.naming.physical-strategy",
+      "type": "java.lang.String",
+      "description": "Description for application.jpa.hibernate.naming.physical-strategy."
+    },
+    {
+      "name": "application.jpa.show-sql",
+      "type": "java.lang.String",
+      "description": "Description for application.jpa.show-sql."
+    },
+    {
+      "name": "application.jpa.properties.hibernate.default_schema",
+      "type": "java.lang.String",
+      "description": "Description for application.jpa.properties.hibernate.default_schema."
+    },
+    {
+      "name": "application.jpa.properties.hibernate.format_sql",
+      "type": "java.lang.String",
+      "description": "Description for application.jpa.properties.hibernate.format_sql."
+    },
+    {
+      "name": "application.jpa.database-platform",
+      "type": "java.lang.String",
+      "description": "Description for application.jpa.database-platform."
+    },
+    {
+      "name": "application.jpa.liquibase.change-log",
+      "type": "java.lang.String",
+      "description": "Description for application.jpa.liquibase.change-log."
     }
   ] }

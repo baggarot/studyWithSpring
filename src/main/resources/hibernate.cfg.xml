@@ -15,7 +15,9 @@
   <property name="show_sql">true</property>
   <property name="format_sql">true</property>
   <property name="hbm2ddl.auto">update</property>
-  <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+  <property name="dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
+
+  <mapping class="lesson30.model.City"/>
 
  </session-factory>
 </hibernate-configuration>

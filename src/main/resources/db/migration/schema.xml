@@ -1,0 +1,32 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="Create-table-directory_of_cities" author="Aleksandr Priemkin">
+        <preConditions>
+            <not>
+                <tableExists tableName="DIRECTORY_OF_CITIES"/>
+            </not>
+        </preConditions>
+        <createTable tableName="DIRECTORY_OF_CITIES">
+            <column  name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="CITY_CODE" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_NAME" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_NAME_IN_ENGLISH" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NUMBER_OF_RESIDENTS" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
