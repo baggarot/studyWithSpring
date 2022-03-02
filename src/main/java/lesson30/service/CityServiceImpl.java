@@ -4,6 +4,7 @@ import lesson30.model.City;
 import lesson30.repository.CityRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class CityServiceImpl implements CityService {
     private final CityRepository cityRepository;
 
     @Override
+    @Transactional(noRollbackFor = IllegalStateException.class)
     public City add(City city) {
         return cityRepository.save(city);
     }
@@ -24,6 +26,7 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<City> allCities() {
         return cityRepository.findAll();
     }
