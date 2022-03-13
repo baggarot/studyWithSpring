@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер валют</title>
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/converter.js"></script>
+</head>
+<body>
+    <div>
+        <div>
+            <label for="valute">
+                Выберете валюту для расчета
+                <select name="valute" id="valute">
+                    <option value="AUD">Австралийский доллар</option>
+                    <option value="AZN">Азербайджанский манат</option>
+                    <option value="GBP">Фунт стерлингов Соединенного королевства</option>
+                    <option value="AMD">Армянских драмов</option>
+                    <option value="BYN">Белорусский рубль</option>
+                    <option value="BGN">Болгарский лев</option>
+                    <option value="BRL">Бразильский реал</option>
+                    <option value="HUF">Венгерских форинтов</option>
+                    <option value="HKD">Гонконгский доллар</option>
+                    <option value="DKK">Датская крона</option>
+                    <option value="USD">Доллар США</option>
+                    <option value="EUR">Евро</option>
+                    <option value="INR">Индийских рупий</option>
+                    <option value="KZT">Казахстанских тенге</option>
+                    <option value="CAD">Канадский доллар</option>
+                    <option value="KGS">Киргизских сомов</option>
+                    <option value="CNY">Китайский юань</option>
+                    <option value="MDL">Молдавских леев</option>
+                    <option value="NOK">Норвежская крона</option>
+                    <option value="PLN">Польский злотый</option>
+                    <option value="RON">Румынский лей</option>
+                    <option value="XDR">СДР (специальные права заимствования)</option>
+                    <option value="SGD">Сингапурский доллар</option>
+                    <option value="TJS">Таджикский сомони</option>
+                    <option value="TRY">Турецких лир</option>
+                    <option value="TMT">Новый туркменский манат</option>
+                    <option value="UZS">Узбекских сумов</option>
+                    <option value="UAH">Украинских гривен</option>
+                    <option value="CZK">Чешских крон</option>
+                    <option value="SEK">Шведская крона</option>
+                    <option value="CHF">Швейцарский франк</option>
+                    <option value="ZAR">Южноафриканских рэндов</option>
+                    <option value="KRW">Вон Республики Корея</option>
+                    <option value="JPY">Японских иен</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label for="currency">Введите значение валюты</label>
+            <input id="currency" type="text" name="currency"/>
+        </div>
+        <div>
+            <button id="convert">Расчитать</button>
+        </div>
+        <div>
+            <span id="result">
+                Расчет пока не производился
+            </span>
+        </div>
+    </div>
+    <br>
+    <a href="index.html">Вернуться назад</a>
+</body>
+</html>
