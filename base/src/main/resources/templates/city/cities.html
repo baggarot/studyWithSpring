@@ -54,7 +54,7 @@
         <td th:text="${city.numberOfResidents}">art</td>
         <td>
             <a th:href="@{/city/edit(code=${city.id})}" href="city.html"><img alt="Edit"
-                                                                                   th:src="@{/images/edit.png}"/></a>
+                                                                              th:src="@{/images/edit.png}"/></a>
             <a id="delete-handler" th:id="${city.id}" th:name="${city.id}"><img
                     alt="Delete" th:src="@{/images/delete.png}"/></a>
         </td>
@@ -62,7 +62,7 @@
     </tbody>
 </table>
 <div id="toolbar">
-    <a th:href="@{/}" href="../index.html"><img alt="Back" th:src="@{/images/back.png}"/></a>
+    <a th:href="@{/static}" href="../index.html"><img alt="Back" th:src="@{/images/back.png}"/></a>
     <a th:href="@{/city/add}" href="city.html"><img alt="Add" th:src="@{/images/add.png}"/></a>
 </div>
 </body>

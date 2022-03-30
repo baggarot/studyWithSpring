@@ -1,5 +1,6 @@
 package lesson35.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lesson30.service.CityService;
 import lesson35.dto.CityDto;
 import lesson35.dto.CityPageDto;
@@ -33,19 +34,22 @@ public class CityPageController {
         return "city/cities";
     }
 
+    @Operation(summary = "Новый объект")
     @GetMapping("/city/add")
     public String newCity(Model model) {
         return "city/city";
     }
 
+    @Operation(summary = "Редактирование объекта")
     @GetMapping("/city/edit")
-    public String currentGenre(@RequestParam("id") Long cityId, Model model) {
+    public String currentCity(@RequestParam("id") Long cityId, Model model) {
         CityDto currentCity = cityService.getByCityId(cityId)
                 .orElseThrow(() -> new IllegalArgumentException("Non existed city"));
         model.addAttribute("city", currentCity);
         return "city/city";
     }
 
+    @Operation(summary = "Сохранение объекта")
     @PostMapping("/city/save")
     public String saveCity(CityDto city) {
         cityService.save(city);
