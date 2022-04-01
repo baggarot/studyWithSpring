@@ -18,6 +18,8 @@
   <property name="dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
 
   <mapping class="lesson30.model.City"/>
+  <mapping class="lesson37.model.Role"/>
+  <mapping class="lesson37.model.User"/>
 
  </session-factory>
 </hibernate-configuration>

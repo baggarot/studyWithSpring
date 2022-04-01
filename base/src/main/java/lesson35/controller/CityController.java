@@ -21,6 +21,11 @@ public class CityController {
         return String.format("Hello, %s", initiator);
     }
 
+    @GetMapping("/api/secured")
+    public String secured() {
+        return "test";
+    }
+
     @Operation(summary = "Удаление элемента")
     @DeleteMapping("/cities/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Long cityId) {

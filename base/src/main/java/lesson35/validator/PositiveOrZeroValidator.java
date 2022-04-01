@@ -17,7 +17,7 @@ public class PositiveOrZeroValidator implements ConstraintValidator<PositiveOrZe
 
     @Override
     public boolean isValid(Integer value, ConstraintValidatorContext context) {
-        final int i = this.annotation.originalValue();
+        final int i = this.annotation.originValue();
         if (value < 0) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate("Возникла ошибка проверки значения")
