@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of all cities</title>
+    <link rel="stylesheet" th:href="@{/styles/directory.css}" href="styles/directory.css">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"
+          href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css" />
+    <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            fillData();
+        });
+
+        function fillData(page) {
+            $.get('/api/cities' + (page ? '?page=' + page : ''), function (result) {
+                let rowsData = '';
+                for (let i = 0; i < result.length; i++) {
+                    let city = result[i];
+                    rowsData += '<tr><td>' + city.code + '</td>' +
+                        '<td>' + city.name + '</td>' +
+                        '<td><a href="/city/edit?code=' + city.code + '"><img title="Edit" src="/images/edit.png"/></a>' +
+                        '<a data-id="city_' + city.code + '" href="city.html"><img title="Delete" src="/images/delete.png"/></a>' +
+                        '</td></tr>';
+                }
+                let cityDataElement = $('#cityData');
+                cityDataElement.html(rowsData);
+                $('a[data-id^=city_]').one('click', function (event) {
+                    if (confirm('Are you sure to delete this city?')) {
+                        let cityCode = $(this).attr('data-id').replace('city_', '');
+                        $.ajax({
+                            url: '/api/cities/' + cityCode,
+                            type: 'DELETE',
+                            success: function () {
+                                location.href = '/cities';
+                            }
+                        });
+                    }
+                    event.preventDefault();
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+<p><strong>Cities:</strong></p>
+
+<table class="cities">
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>NameInEnglish</th>
+        <th>NumberOfResidents</th>
+    </tr>
+    </thead>
+    <tbody id="cityData"/>
+</table>
+<div id="toolbar">
+    <a th:href="@{/}" href="../index.html"><img title="Back" th:src="@{/images/back.png}"/></a>
+    <a th:href="@{/city/add}" href="city.html"><img title="Add" th:src="@{/images/add.png}"/></a>
+</div>
+</body>
+</html>
