@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add/Edit/View city</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+<form id="add-form" th:action="@{/city/save}" th:if="${city == null}" method="post" action="city.html">
+    <p><strong>Add new city:</strong></p>
+
+    <div class="row">
+        <label for="code-input">Code:</label>
+        <input id="code-input" name="code" type="text" required="required" maxlength="3"/>
+    </div>
+
+    <div class="row">
+        <label for="name-input">Name:</label>
+        <input id="name-input" name="name" type="text" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <label for="numberOfResidents-input">Number of residents:</label>
+        <input id="numberOfResidents-input" name="numberOfResidents" type="text" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <a th:href="@{/cities}" href="cities.html"><img title="Back" th:src="@{/images/back.png}"/></a>
+        <button type="submit"><img title="Save" th:src="@{/images/save.png}"/></button>
+    </div>
+</form>
+<form id="edit-form" th:action="@{/city/save(code=${city.code})}" th:unless="${city == null}" method="post"
+      action="city.html" th:object="${city}">
+    <p><strong>City Info:</strong></p>
+
+    <div class="row">
+        <label for="code-input">Code:</label>
+        <input id="code-input" type="text" th:value="*{code}" readonly="readonly" value="1"/>
+    </div>
+
+    <div class="row">
+        <label for="name-input">Name:</label>
+        <input id="name-input" name="name" type="text" th:value="*{name}" required="required" maxlength="120" value="Art"/>
+    </div>
+
+    <div class="row">
+        <label for="nameInEnglish-input">Name in English:</label>
+        <input id="nameInEnglish-input" name="name" type="text" th:value="*{nameInEnglish}"
+               required="required" maxlength="120" value="Art"/>
+    </div>
+
+    <div class="row">
+        <label for="numberOfResidents-input">Number of residents:</label>
+        <input id="numberOfResidents-input" name="numberOfResidents" th:value="*{numberOfResidents}"
+               required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <a th:href="@{/cities}" href="cities.html"><img title="Back" th:src="@{/images/back.png}"/></a>
+        <button type="submit"><img title="Save" th:src="@{/images/save.png}"/></button>
+    </div>
+</form>
+</body>
+</html>
